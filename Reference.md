@@ -1,4 +1,7 @@
 # Reference
+Temporary resolve  dns:
+https://askubuntu.com/questions/91543/apt-get-update-fails-to-fetch-files-temporary-failure-resolving-error
+
 https://www.freecodecamp.org/news/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882/
 https://github.com/rinormaloku/k8s-mastery
 
