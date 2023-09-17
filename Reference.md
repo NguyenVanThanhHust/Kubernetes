@@ -6,9 +6,8 @@ Disable swap linux (Use the last answer provided by Benny):
 https://askubuntu.com/questions/440326/how-can-i-turn-off-swap-permanently
 
 https://www.freecodecamp.org/news/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882/
-https://github.com/rinormaloku/k8s-mastery
 
-https://www.freecodecamp.org/news/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882/
+https://github.com/rinormaloku/k8s-mastery
 
 https://www.freecodecamp.org/news/certified-kubernetes-administrator-study-guide-cka/
 
@@ -23,3 +22,5 @@ https://training.linuxfoundation.org/certification/certified-kubernetes-applicat
 https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/
 
 
+Tools to master:
+kubectx, kebens, helm, Prometheus, Grafana, Istio, Vault, Kube-bench, k9s
