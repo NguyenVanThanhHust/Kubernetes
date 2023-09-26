@@ -1,13 +1,13 @@
+import os, sys
 from typing import Union
 
 from fastapi import FastAPI
 
 from celery import Task, shared_task
 from celery.result import AsyncResult
-from app.celery_task_queue import celery_app
+from celery_task_queue import celery_app
 
 from loguru import logger
-
 from ai_model import build_fake_ai_model
 
 app = FastAPI()

@@ -3,6 +3,8 @@ from celery import Celery
 
 BROKER_URI = os.environ['BROKER_URI']
 BACKEND_URI = os.environ['BACKEND_URI']
+
+os.makedirs("logs", exist_ok=True)
 celery_app = Celery(
     "task_queue", 
     broker=BROKER_URI,
