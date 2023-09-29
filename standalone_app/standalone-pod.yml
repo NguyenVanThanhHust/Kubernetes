@@ -4,7 +4,6 @@ metadata:
   name: standalone-app                                  # 2
 spec:                                                # 3
   containers:
-    # - image: docker.io/quaden/docker_images:fast_api_img # 4
     - image: quaden/docker_images:fast_api_img # 4
       name: standalone-app                              # 5
       ports:

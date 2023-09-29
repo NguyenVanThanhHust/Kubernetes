@@ -38,10 +38,8 @@ Create docker registry to save docker image online
 docker pull docker.io/library/registry:2
 ```
 ```
-docker run -d -p 9004:5000 -v $(pwd)/registry:/var/lib/registry \
-							--restart always --name registry registry:2
+docker run -d -p 9004:5000 -v $(pwd)registry:/var/lib/registry                             --restart always --name registry registry:2
 ```
-
 
 Test docker registry
 ```

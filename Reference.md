@@ -7,6 +7,9 @@ https://askubuntu.com/questions/440326/how-can-i-turn-off-swap-permanently
 
 https://www.freecodecamp.org/news/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882/
 
+Sample stateless app
+https://github.com/robmarkcole/ServingMLFastCelery
+
 https://github.com/rinormaloku/k8s-mastery
 
 https://www.freecodecamp.org/news/certified-kubernetes-administrator-study-guide-cka/

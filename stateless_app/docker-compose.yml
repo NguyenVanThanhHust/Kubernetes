@@ -1,43 +1,29 @@
 version: '3.4'
 
 services:
-  web:
-    container_name: api_service
-    # image: fast_api_img
-    build:
-      context: . ## Current folder
-      dockerfile: Dockerfile_app
-      network: host
-    network_mode: host
-    command: uvicorn main:app --host 0.0.0.0 --port 8899
-    # volumes:
-    #   - ${PWD}:/code/
+  api:
+    build: .
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
+    ports:
+      - 8000:8000
     environment:
-      - NVIDIA_DRIVER_CAPABILITIES=video,compute,utility
-      - BROKER_URI=redis://127.0.0.1:6379
-      - BACKEND_URI=redis://127.0.0.1:6379
-
+      - BROKER_URI=redis://redis
+      - BACKEND_URI=redis://redis
     depends_on:
       - redis
 
-  celery_worker:
-    # image: celery_img 
-    build:
-      context: . ## Current folder
-      dockerfile: Dockerfile_celery
-      network: host
-
-    command: celery -A celery_task_queue worker -P solo --loglevel=INFO --logfile=logs/celery.log
-    volumes:
-      - ${PWD}:/code/
-    network_mode: host
+  worker:
+    build: .
+    command: celery -A celery_task_app.worker worker --uid=nobody --gid=nogroup --hostname=worker@%h --loglevel=INFO
     environment:
-      - BROKER_URI=redis://127.0.0.1:6379
-      - BACKEND_URI=redis://127.0.0.1:6379
+      - BROKER_URI=redis://redis
+      - BACKEND_URI=redis://redis
+      - MODEL_PATH=./model.pkl
     depends_on:
+      - api
       - redis
 
   redis:
-    image: redis:7
+    image: redis:6-alpine
     ports:
-      - "6379:6379"
+      - 6379:6379
