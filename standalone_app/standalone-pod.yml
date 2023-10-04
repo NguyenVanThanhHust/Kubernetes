@@ -1,10 +1,16 @@
 apiVersion: v1
 kind: Pod                                            # 1
 metadata:
-  name: standalone-app                                  # 2
+  name: standalone-app
+  labels:
+    creation_method: manual
+    env: dev
+    app: main_program
+    rel: alpha                                  # 2
 spec:                                                # 3
   containers:
     - image: quaden/docker_images:fast_api_img # 4
       name: standalone-app                              # 5
       ports:
-        - containerPort: 80                          # 6
+        - containerPort: 8080                          # 6
+          protocol: TCP

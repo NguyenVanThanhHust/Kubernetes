@@ -15,7 +15,7 @@ kubectl create -f standalone-pod.yml
 ```
 Forward pods to use
 ```
-kubectl port-forward standalone-app 8080:80
+kubectl port-forward standalone-app 8081:8080
 ```
 
 Access program in browser
