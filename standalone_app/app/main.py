@@ -5,6 +5,11 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
+@app.route('/health')
+def health_check():
+    return 'OK', 200
+
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}

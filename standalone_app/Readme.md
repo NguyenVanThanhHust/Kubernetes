@@ -26,3 +26,19 @@ or
 ```
 http://127.0.0.1:8080/docs
 ```
+
+Create and switch context in kubernets cluster
+```
+k create namespace dev 
+```
+
+Change namespace 
+```
+k config --set-context --current --namespace=dev
+```
+
+Delete pod by name and namespace
+```
+k delete pod standalone-app -n default
+```
+
